@@ -123,4 +123,4 @@ tolerations: []
 affinity: {}
 
 env:
-  TEST: "TEST"
+  TEST: TEST
