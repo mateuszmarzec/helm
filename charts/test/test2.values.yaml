@@ -67,7 +67,12 @@ ingress:
     - host: localhost
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
+          backend:
+            service:
+              name: test
+              port:
+                number: 80
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -123,4 +128,4 @@ tolerations: []
 affinity: {}
 
 env:
-  TEST: TEST
+  TEST: "TEST"
