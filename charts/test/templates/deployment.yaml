@@ -36,11 +36,11 @@ spec:
           envFrom:
           {{- if .Values.env }}
             - configMapRef:
-              name: {{ include "app.fullname" $ }}
+              name: {{ include "test.fullname" $ }}
           {{- end }}
           {{- if .Values.secrets }}
             - secretRef:
-              name: {{ include "app.fullname" $ }}
+              name: {{ include "test.fullname" $ }}
           {{- end }}
           {{- end }}
           securityContext:
