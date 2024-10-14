@@ -7,6 +7,6 @@ metadata:
     {{- include "test.labels" . | nindent 4 }}
 data:
   {{- with .Values.env }}
-    {{- toYaml . | nident 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 {{- end }}
