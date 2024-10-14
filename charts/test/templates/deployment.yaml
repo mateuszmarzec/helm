@@ -35,11 +35,11 @@ spec:
           {{- if or .Values.env .Values.secrets }}
           envFrom:
           {{- if .Values.env }}
-            - configMapRef:
+          - configMapRef:
               name: {{ include "test.fullname" $ }}
           {{- end }}
           {{- if .Values.secrets }}
-            - secretRef:
+          - secretRef:
               name: {{ include "test.fullname" $ }}
           {{- end }}
           {{- end }}
