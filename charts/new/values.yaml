@@ -1,4 +1,4 @@
-# Default values for test.
+# Default values for new.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -16,8 +16,8 @@ image:
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 # This is to override the chart name.
-nameOverride: "test"
-fullnameOverride: "test"
+nameOverride: ""
+fullnameOverride: ""
 
 #This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
@@ -58,21 +58,16 @@ service:
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
-  enabled: true
-  className: "kong"
+  enabled: false
+  className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: localhost
+    - host: chart-example.local
       paths:
         - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: test
-              port:
-                number: 80
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -126,9 +121,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-env:
-  TEST: "TEST"
-
-secrets:
-  db_password: AgCFvLX2mD3L5/pIHweoepE3Tkyb2FYyQVfzK9WPR26LbGb0ixjhWfJjbdAXri9dmXyY/HT6DefNFCs1+khHe8q8EHcZMg572o5hLPay5JY7uSjJW8BYgHngkDzGX2SNA2pC3Ugce4Uu5LEXPmr7OyLgE2dj+GPKcSeD5Um7Mc1ZjLoVIBNFNFZglhLzf4TIj17+x4h/XeKLIqlUPRQ+JBUotm7dhWPoG7raDrhUwOwz4gtLfeaNLaa48LaEhpSk5UPPPgoDbKxl2uaBFRQOG1fg/ElTTtGpYyLCjlpGr7PCRh0kkcRnBSTkcUpliXX2TB45NefNaxHnInIlXxM1chKW/9H9qFEE7GzbG8QwXLZPRE0wsGBn8oXLtFfqHs8N9fFO1uJQK9b+TjOYsM/nUAQ3rOa2505uwhF8B8zsmTnMzXSiGwkFjClS6Q9oYrOdUMwAZu6Mb7zKcM/XJv8hPitvMLCuAZ6Qbq0Z81WK3ZAL0GWXVHLo0Rs8zdnB2vPjkgGDf5cNDuI4MdlSdQa+0ifX0lIWFzGRZumR/VTW/aZfynR/4ZSMivPoi+2Sr6CK5pyTA5RaMyBKmqQN/JPD7gWj4fLD4/8/2qz+ypoKK6Py94EUpmBTA0M7c6YdTgbAEjbz5r2oL9N//ZbFSmSl8EqSd4hEOteanl1Evw6u7ntJhZYNeFZjt/1P9FzcJa6/DNjj+8rGaxh10Q==
