@@ -42,7 +42,7 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
-{{- define "test.secretAnnotations" -}}
+{{- define "app.secretAnnotations" -}}
 sealedsecrets.bitnami.com/cluster-wide: "true"
 {{- end }}
 
