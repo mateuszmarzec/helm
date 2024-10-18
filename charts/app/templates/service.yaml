@@ -7,7 +7,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    {{- with .Values,service.ports }}
+    {{- with .Values.service.ports }}
       {{- toYaml . | nindent 4 }}
     {{- end }}
   selector:
