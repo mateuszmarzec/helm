@@ -52,7 +52,7 @@ securityContext: {}
 
 ports:
   - name: http
-    containerPort: 8080
+    containerPort: 8000
     protocol: TCP
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
@@ -62,7 +62,7 @@ service:
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 8000
     protocol: TCP
     name: http
 
