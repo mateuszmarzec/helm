@@ -138,4 +138,4 @@ tolerations: []
 affinity: {}
 
 env:
-  TEST: "TEST"
+  REDIS_HOST: "redis.localhost"
