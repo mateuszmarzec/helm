@@ -75,7 +75,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: dns.localhost
+    - host: status.localhost
       paths:
         - path: /
           pathType: Prefix
@@ -91,11 +91,11 @@ ingress:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /status
     port: http
 readinessProbe:
   httpGet:
-    path: /
+    path: /status
     port: http
 
 resources: {}
