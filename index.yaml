@@ -3,6 +3,16 @@ entries:
   app:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-10-21T13:38:27.819845485Z"
+    description: A Helm chart for Kubernetes
+    digest: 6e6884bcadceb663a6073498f8fe2dbe12d4f564bbebd9588acf3db614a4d688
+    name: app
+    type: application
+    urls:
+    - https://github.com/mateuszmarzec/helm/releases/download/app-0.1.23/app-0.1.23.tgz
+    version: 0.1.23
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-10-21T13:33:19.212392072Z"
     description: A Helm chart for Kubernetes
     digest: 7c41441b847750c2ff942f68a6b212e91d3a691175ec27026d03b955b23dad39
@@ -523,4 +533,4 @@ entries:
     urls:
     - https://github.com/mateuszmarzec/helm/releases/download/test-0.1.0/test-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-21T13:33:19.212587798Z"
+generated: "2024-10-21T13:38:27.820210078Z"
