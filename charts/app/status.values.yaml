@@ -95,7 +95,7 @@ livenessProbe:
     port: http
 readinessProbe:
   httpGet:
-    path: /
+    path: /status
     port: http
 
 resources: {}
