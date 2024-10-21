@@ -139,3 +139,4 @@ affinity: {}
 
 env:
   REDIS_HOST: "redis.localhost"
+  REDIS_PORT: "6379"

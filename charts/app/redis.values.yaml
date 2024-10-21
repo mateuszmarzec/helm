@@ -49,11 +49,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-ports:
-  - name: http
-    containerPort: 6379
-    protocol: TCP
-
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
@@ -66,36 +61,10 @@ service:
     name: http
 
 
-# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
-ingress:
-  enabled: true
-  className: "kong"
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: redis.localhost
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: redis
-              port:
-                number: 6379
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
-livenessProbe:
-  httpGet:
-    path: /status
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
