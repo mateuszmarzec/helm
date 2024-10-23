@@ -138,5 +138,5 @@ tolerations: []
 affinity: {}
 
 env:
-  REDIS_HOST: "redis.status.svc.cluster.local"
+  REDIS_HOST: "redis.app.svc.cluster.local"
   REDIS_PORT: "6379"
